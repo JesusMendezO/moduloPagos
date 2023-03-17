@@ -38,7 +38,7 @@ function Receipt() {
   });
 
   
-  
+  console.log(pagos);
   
   
   return (
