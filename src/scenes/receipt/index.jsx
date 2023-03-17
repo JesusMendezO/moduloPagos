@@ -27,7 +27,7 @@ const [datos, setDatos] = useState('')
 
   const pagos =clienteAxios.get('/usuarios/voluntario/')
   .then(function (response) {
-    setDatos(response)
+    setDatos(response.data)
 
   })
   .catch(function (error) {
@@ -39,7 +39,7 @@ const [datos, setDatos] = useState('')
   });
 
   
-  console.log(datos.data);
+  console.log(datos);
   console.log(initialDetails)
   
   
@@ -86,7 +86,7 @@ const [datos, setDatos] = useState('')
       </AppBar>
       </Container>
       <Box>
-        <Search details={initialDetails}/>
+        <Search details={datos.data}/>
       </Box>
       <Footer />
     </Box> 
