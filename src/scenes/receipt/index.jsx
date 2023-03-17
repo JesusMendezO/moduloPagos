@@ -24,7 +24,7 @@ function Receipt() {
     setAnchorEl(null);
   };
 
-  const pagos =axios.get('/usuarios/voluntario/')
+  const pagos =clienteAxios.get('/usuarios/voluntario/')
   .then(function (response) {
     
     console.log(response);
