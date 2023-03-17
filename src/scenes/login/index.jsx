@@ -60,7 +60,7 @@ export default function Login() {
 
     try {
       
-        const { data } = await clienteAxios.post('/login/usuario/', {
+        const { data } = await clienteAxios.post('/usuarios/login/', {
           correo: correo,
           password:password
         })
