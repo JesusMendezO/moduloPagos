@@ -15,7 +15,7 @@ import clienteAxios from '../../config/clienteAxios'
 function Receipt() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+const [datos, setDatos] = useState('')
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -26,8 +26,8 @@ function Receipt() {
 
   const pagos =clienteAxios.get('/usuarios/voluntario/')
   .then(function (response) {
-    
-    console.log(response);
+    setDatos(response)
+    console.log(setDatos);
   })
   .catch(function (error) {
     // handle error
