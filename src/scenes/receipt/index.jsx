@@ -11,7 +11,7 @@ import Footer from 'components/Footer';
 import initialDetails from 'data/initialDetails';
 import Container from '@mui/material/Container';
 import LogoutOutlined from '@mui/icons-material/LogoutOutlined';
-
+import clienteAxios from '../../config/clienteAxios'
 function Receipt() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,6 +24,23 @@ function Receipt() {
     setAnchorEl(null);
   };
 
+  const pagos =axios.get('/usuarios/voluntario/')
+  .then(function (response) {
+    
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+
+  
+  
+  
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Container>
