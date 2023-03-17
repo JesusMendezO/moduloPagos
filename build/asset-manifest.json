@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/static/css/main.31d6cfe0.css",
+    "main.js": "/static/js/main.3dffc4b4.js",
+    "static/media/paluz-logo.png": "/static/media/paluz-logo.80f12c4827ecb9938b93.png",
+    "index.html": "/index.html",
+    "main.3dffc4b4.js.map": "/static/js/main.3dffc4b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.3dffc4b4.js"
+  ]
+}
