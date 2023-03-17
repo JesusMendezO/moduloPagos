@@ -27,7 +27,7 @@ const [datos, setDatos] = useState('')
   const pagos =clienteAxios.get('/usuarios/voluntario/')
   .then(function (response) {
     setDatos(response)
-    console.log(setDatos);
+
   })
   .catch(function (error) {
     // handle error
@@ -38,7 +38,7 @@ const [datos, setDatos] = useState('')
   });
 
   
-  console.log(pagos);
+  console.log(datos);
   
   
   return (
