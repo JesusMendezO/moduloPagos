@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
@@ -16,6 +17,8 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import logo from 'assets/paluz-logo.png';
+import clienteAxios from '../../config/clienteAxios'
+
 
 function Copyright(props) {
   return (
@@ -34,17 +37,55 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
+
+  const [correo, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [alerta, setAlerta] = useState({})
+  const navigate = useNavigate();
   
   const nav = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    if([correo, password].includes('')) {
+        setAlerta({
+            msg: 'Todos los campos son obligatorios',
+            error: true
+        });
+        return
+    }
+
+
+
+    try {
+      
+        const { data } = await clienteAxios.post('/login/usuario/', {
+          correo: correo,
+          password:password
+        })
+        .then(function (response) {
+          setAlerta({})
+          console.log(response.data.idToken)
+            localStorage.setItem('token',JSON.stringify(response.data) )
+            //setAuth(data)
+          navigate("/receipt")
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      
+        setAlerta({})
+        console.log(data)
+        
+    } catch (error) {
+        setAlerta({
+            msg: 'errr',
+            error: true
+        })
+    }
+
+}
 
   const [showPassword, setShowPassword] = React.useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
@@ -111,6 +152,8 @@ export default function Login() {
                 label="Correo Electrónico"
                 name="email"
                 autoComplete="email"
+                value={correo}
+                onChange={ e => setEmail(e.target.value)}
               />
               <TextField
                 margin="normal"
@@ -120,6 +163,8 @@ export default function Login() {
                 label="Contraseña"
                 type={showPassword ? 'text' : 'password'}
                 id="password"
+                value={password}
+                onChange={ e => setPassword(e.target.value)}
                 autoComplete="current-password"
                 InputProps={{ 
                   endAdornment: (
