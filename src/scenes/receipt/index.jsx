@@ -16,7 +16,7 @@ import clienteAxios from '../../config/clienteAxios'
 function Receipt() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-const [datos, setDatos] = useState('')
+const [datos, setDatos] = useState([])
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
