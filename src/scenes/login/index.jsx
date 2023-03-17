@@ -141,7 +141,7 @@ export default function Login() {
             >
             </Box>
             <Typography className='mt-4' component="h1" variant="h5">
-              Ingresa 
+              Ingresa Tu cuenta
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
