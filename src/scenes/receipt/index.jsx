@@ -39,7 +39,8 @@ const [datos, setDatos] = useState('')
   });
 
   
-  console.log(datos);
+  console.log(datos.data);
+  console.log(initialDetails)
   
   
   return (
@@ -85,7 +86,7 @@ const [datos, setDatos] = useState('')
       </AppBar>
       </Container>
       <Box>
-        <Search details={datos.data}/>
+        <Search details={initialDetails}/>
       </Box>
       <Footer />
     </Box> 
