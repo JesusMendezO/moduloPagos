@@ -86,7 +86,7 @@ const [datos, setDatos] = useState('')
       </AppBar>
       </Container>
       <Box>
-        <Search details={datos.data}/>
+        <Search details={initialDetails}/>
       </Box>
       <Footer />
     </Box> 
