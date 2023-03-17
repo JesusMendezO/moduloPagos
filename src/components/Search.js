@@ -20,7 +20,7 @@ function Search({ details }) {
     person => {
       return (
         person
-        .cedula
+        .nombre
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         person
