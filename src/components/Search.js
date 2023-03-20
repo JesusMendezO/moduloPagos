@@ -21,8 +21,8 @@ function Search({ details }) {
       return (
         person
         .nombre
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
+        .toString()
+        .includes(searchField.toString()) ||
         person
         .email
         .toLowerCase()
