@@ -20,13 +20,7 @@ function Search({ details }) {
     person => {
       return (
         person
-        .nombre
-        .toString()
-        .includes(searchField.toString()) ||
-        person
-        .email
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
+        .cedula
       );
     }
   );
