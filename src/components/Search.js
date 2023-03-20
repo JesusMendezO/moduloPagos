@@ -22,6 +22,7 @@ function Search({ details }) {
       return (
         person
         .cedula
+	.includes(searchField)
       );
     }
   );
