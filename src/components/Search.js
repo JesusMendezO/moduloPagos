@@ -18,6 +18,7 @@ function Search({ details }) {
 
   const filteredPersons = details.filter(
     person => {
+	    console.log(person,'person')
       return (
         person
         .cedula
@@ -31,6 +32,7 @@ function Search({ details }) {
       setSearchShow(false);
     }
     else {
+	    console.log(e.target.value)
       setSearchShow(true);
     }
   };
