@@ -6,6 +6,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { Grid } from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -15,9 +21,27 @@ const style = {
   width: 400,
   bgcolor: 'background.paper',
   border: '2px solid #000',
+  borderRadius: 2,
   boxShadow: 24,
   p: 4,
 };
+// *************************************** PERIODOS DE PAGO *********************************************
+
+var year = new Date().getFullYear().toString()
+var enero = new Date(new Date(new Date().setMonth(1)).setDate(0)).getDate()+ ' Enero de ' + year ;
+var febrero = new Date(new Date(new Date().setMonth(2)).setDate(0)).getDate()+ ' Febero de ' + year ;
+var marzo = new Date(new Date(new Date().setMonth(3)).setDate(0)).getDate()+ ' Marzo de ' + year ;
+var abril = new Date(new Date(new Date().setMonth(4)).setDate(0)).getDate()+ ' Abril de ' + year ;
+var mayo = new Date(new Date(new Date().setMonth(5)).setDate(0)).getDate()+ ' Mayo de ' + year ;
+var junio = new Date(new Date(new Date().setMonth(6)).setDate(0)).getDate()+ ' Junio de ' + year ;
+var julio = new Date(new Date(new Date().setMonth(7)).setDate(0)).getDate()+ ' Julio de ' + year ;
+var agosto = new Date(new Date(new Date().setMonth(8)).setDate(0)).getDate()+ ' Agosto de ' + year ;
+var septiembre = new Date(new Date(new Date().setMonth(9)).setDate(0)).getDate()+ ' Septiembre de ' + year ;
+var octubre = new Date(new Date(new Date().setMonth(10)).setDate(0)).getDate()+ ' Octubre de ' + year ;
+var noviembre = new Date(new Date(new Date().setMonth(11)).setDate(0)).getDate()+ ' Noviembre de ' + year ;
+var diciembre = new Date(new Date(new Date().setMonth(12)).setDate(0)).getDate()+ ' Diciembre de ' + year ;
+
+// *********************************************************************************************************
 
 function CardComp({person}) {
 
@@ -36,7 +60,11 @@ function CardComp({person}) {
         </Typography>
       </CardContent>
       <CardActions  sx={{ bgcolor: "lightgray" }}>
-        <Button size="small" sx={{ color:"blue" }} onClick={handleOpenModal} > VER MÁS </Button>
+        <Grid container justifyContent="flex-end" >
+          <Grid item>
+            <Button size="small" sx={{ color:"blue" }} onClick={handleOpenModal}> VER MÁS </Button>
+          </Grid>
+        </Grid>
          <Modal
             open={open}
             onClose={handleCloseModal}
@@ -50,8 +78,114 @@ function CardComp({person}) {
              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                {person.email}  
              </Typography>
-             <Button variant='contained' sx={{ mt: 2 }} size="small" color='success'> Cancelar </Button>
-             <Button variant='contained' sx={{ mt: 2 }} size="small"> Generar Recibo </Button>
+             <Divider sx={{ mt:2 }}>
+                <Chip label="PERÍODO DE INCENTIVO" />
+             </Divider>
+             <Grid container sx={{ mt: 2,}} spacing={1} justifyContent="center" >
+             <Grid item xs={6}>
+             <FormGroup>
+               <FormControlLabel
+                 control={
+                 <Checkbox name="enero" />
+                 }
+                label={'Enero ' + year  }
+                value={enero.toString()}
+                sx={{ fontSize: 1.5 }}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="febrero" />
+                 }
+                label={'Febrero ' + year  }
+                value={febrero.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="marzo" />
+                 }
+                label={'Marzo ' + year  }
+                value={marzo.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="abril" />
+                 }
+                label={'Abril ' + year  }
+                value={abril.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="mayo" />
+                 }
+                label={'Mayo ' + year  }
+                value={mayo.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="junio" />
+                 }
+                label={'Junio ' + year  }
+                value={junio.toString()}
+              />
+              </FormGroup>
+             </Grid>
+             <Grid item xs={6}>
+             <FormGroup>
+               <FormControlLabel
+                 control={
+                 <Checkbox name="julio" />
+                 }
+                label={'Julio ' + year  }
+                value={julio.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="agosto" />
+                 }
+                label={'Agosto ' + year  }
+                value={agosto.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="septiembre" />
+                 }
+                label={'Septiembre ' + year  }
+                value={septiembre.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="octubre" />
+                 }
+                label={'Octubre ' + year  }
+                value={octubre.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="noviembre" />
+                 }
+                label={'Noviembre ' + year  }
+                value={noviembre.toString()}
+              />
+              <FormControlLabel
+                 control={
+                 <Checkbox name="diciembre" />
+                 }
+                label={'Diciembre ' + year  }
+                value={diciembre.toString()}
+              />
+              </FormGroup>
+             </Grid>
+             </Grid>
+             <Divider sx={{ mt:2 }}>
+             </Divider>
+             <Grid container sx={{ mt: 2,}} spacing={1} justifyContent="flex-end" >
+             <Grid item>
+               <Button variant='contained' color='error' onClick={handleCloseModal}> Cancelar </Button>
+             </Grid>
+             <Grid item>
+               <Button variant='contained' sx={{ bgcolor:"teal" }}  > Generar Recibo </Button>
+             </Grid>
+             </Grid>
           </Box>
          </Modal>
       </CardActions>
