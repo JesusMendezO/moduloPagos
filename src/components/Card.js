@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState,createContext  } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -12,7 +13,10 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Grid } from '@mui/material';
-
+import { Language } from '@mui/icons-material';
+import ReactDOM from "react-dom/client";
+import Invoice from "scenes/invoice"
+const UserContext = createContext()
 const style = {
   position: 'absolute',
   top: '50%',
@@ -42,21 +46,63 @@ var noviembre = new Date(new Date(new Date().setMonth(11)).setDate(0)).getDate()
 var diciembre = new Date(new Date(new Date().setMonth(12)).setDate(0)).getDate()+ ' Diciembre de ' + year ;
 
 // *********************************************************************************************************
-
+const list = [
+  { value: enero.toString(), label: 'Enero ' + year  },
+  { value: febrero.toString(), label: 'Febrero ' + year },
+  { value: marzo.toString(), label: 'Marzo ' + year  },
+  { value: abril.toString(), label: 'Abril ' + year  },
+  { value: mayo.toString(), label: 'Mayo ' + year   },
+  { value: junio.toString(), label: 'Junio ' + year }
+];
+const list1 = [
+  { value: julio.toString(), label: 'Julio ' + year  },
+  { value: agosto.toString(), label: 'Agosto ' + year },
+  { value: septiembre.toString(), label: 'Septiembre ' + year  },
+  { value: octubre.toString(), label: 'Octubre ' + year  },
+  { value: noviembre.toString(), label: 'Noviembre ' + year   },
+  { value: diciembre.toString(), label: 'Dicimbre ' + year }
+];
 function CardComp({person}) {
+  const nav = useNavigate();
 
     const [open, setOpen] = React.useState(false);
     const handleOpenModal = () => setOpen(true);
     const handleCloseModal = () => setOpen(false);
+    const [lang, setLang] = useState([]);
+const [inf,setInf]=useState([]);
+    const handleChange = e => {
+      const { value, checked } = e.target;
+      if (checked) {
+        // push selected value in list
+        setLang(prev => [...prev, value]);
+      } else {
+        // remove unchecked value from the list
+        setLang(prev => prev.filter(x => x !== value));
+      }
+    }
+let vacio =[];
+let  l ;
+    const enviar = e => {
+      for (let i = 0; i < lang.length ; i++) {
+        console.log(lang)
+         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incentivo}];
+       
+      vacio = vacio.concat(l)
+    }
+    localStorage.setItem('datos', JSON.stringify(vacio));
 
-	return(
-	<Card sx={{ minWidth: 275, mb: 2, mt: 2, }} variant="outlined">
+    nav("/invoice")
+    }
+
+      return(
+   
+      <Card sx={{ minWidth: 275, mb: 2, mt: 2, }} variant="outlined">
       <CardContent>
         <Typography sx={{ fontSize: 25, color: "black", mt: 1}} gutterBottom>
-		      {person.nombre}
+                  {person.name}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-		      {person.cedula}
+                  {person.email}
         </Typography>
       </CardContent>
       <CardActions  sx={{ bgcolor: "lightgray" }}>
@@ -73,10 +119,10 @@ function CardComp({person}) {
           >
           <Box sx={style}>
              <Typography id="modal-modal-title" variant="h6" component="h2">
-               {person.nombre}
+               {person.name}
              </Typography>
              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-               {person.cedula}  
+               {person.email}  
              </Typography>
              <Divider sx={{ mt:2 }}>
                 <Chip label="PERÍODO DE INCENTIVO" />
@@ -84,7 +130,7 @@ function CardComp({person}) {
              <Grid container sx={{ mt: 2,}} spacing={1} justifyContent="center" >
              <Grid item xs={6}>
              <FormGroup>
-               <FormControlLabel
+               {/* <FormControlLabel
                  control={
                  <Checkbox name="enero" />
                  }
@@ -126,12 +172,20 @@ function CardComp({person}) {
                  }
                 label={'Junio ' + year  }
                 value={junio.toString()}
-              />
+              /> */}
+                 {list.map((x, i) => <label key={i}>
+        <input
+          type="checkbox"
+          name="lang"
+          value={x.value}
+          onChange={handleChange}
+        /> {x.label}
+      </label>)}
               </FormGroup>
              </Grid>
              <Grid item xs={6}>
              <FormGroup>
-               <FormControlLabel
+               {/* <FormControlLabel
                  control={
                  <Checkbox name="julio" />
                  }
@@ -172,7 +226,19 @@ function CardComp({person}) {
                  }
                 label={'Diciembre ' + year  }
                 value={diciembre.toString()}
-              />
+              /> */}
+         
+      {list1.map((x, i) => <label key={i}>
+        <input
+          type="checkbox"
+          name="lang"
+          value={x.value}
+          onChange={handleChange}
+        /> {x.label}
+      </label>)}
+ 
+     
+   
               </FormGroup>
              </Grid>
              </Grid>
@@ -183,14 +249,15 @@ function CardComp({person}) {
                <Button variant='contained' color='error' onClick={handleCloseModal}> Cancelar </Button>
              </Grid>
              <Grid item>
-               <Button variant='contained' sx={{ bgcolor:"teal" }}  > Generar Recibo </Button>
+               <Button variant='contained' sx={{ bgcolor:"teal" }} onClick={enviar} > Generar Recibo </Button>
              </Grid>
              </Grid>
           </Box>
          </Modal>
       </CardActions>
     </Card>
-	);
+   
+      );
 }
 
 export default CardComp;
