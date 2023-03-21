@@ -119,10 +119,10 @@ let  l ;
           >
           <Box sx={style}>
              <Typography id="modal-modal-title" variant="h6" component="h2">
-               {person.name}
+               {person.nombre}
              </Typography>
              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-               {person.email}  
+               {person.cedula}  
              </Typography>
              <Divider sx={{ mt:2 }}>
                 <Chip label="PERÍODO DE INCENTIVO" />
