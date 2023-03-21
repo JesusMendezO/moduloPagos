@@ -85,7 +85,7 @@ let  l ;
     const enviar = e => {
       for (let i = 0; i < lang.length ; i++) {
         console.log(lang)
-         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incentivo}];
+         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo}];
        
       vacio = vacio.concat(l)
     }
