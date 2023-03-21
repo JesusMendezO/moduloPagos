@@ -99,10 +99,10 @@ let  l ;
       <Card sx={{ minWidth: 275, mb: 2, mt: 2, }} variant="outlined">
       <CardContent>
         <Typography sx={{ fontSize: 25, color: "black", mt: 1}} gutterBottom>
-                  {person.name}
+                  {person.nombre}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  {person.email}
+                  {person.cedula}
         </Typography>
       </CardContent>
       <CardActions  sx={{ bgcolor: "lightgray" }}>
