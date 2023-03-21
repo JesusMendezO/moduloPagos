@@ -12,7 +12,7 @@ import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import logo from 'assets/paluz-logo.png';
 import line from 'assets/line-recibo.png'
 import { Button, Divider } from '@mui/material';
-import Table from 'components/Table';
+
 
 
 const style = {
