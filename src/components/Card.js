@@ -85,7 +85,7 @@ let  l ;
   let sum =0;
     const enviar = e => {
       for (let i = 0; i < lang.length ; i++) {
-        sum = Number(person.incntivo)
+        sum = Number(person.incntivo)+sum
         console.log(lang)
          l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo , total: sum}];
        
