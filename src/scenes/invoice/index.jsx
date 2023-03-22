@@ -57,7 +57,7 @@ const Invoice = () => {
   };
   
   
-  console.log(items)
+  console.log(items.length)
   const print = () => window.print();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -161,7 +161,7 @@ const Invoice = () => {
           </Box>
           <Box sx={{ mt: 4, ml: 2, mr:2 }}>
             <Typography align='justify' sx={{ fontSize: 14 }}>
-                 Se ha pagado la cantidad de novecientos dólares {items.total}, por el concepto de Incentivo a 
+                 Se ha pagado la cantidad de novecientos dólares {items[items.length].total}, por el concepto de Incentivo a 
                  Nombre Voluntario a la cuenta personal Nombre del Banco de Nombre del Titular de 
                  la Cuenta correspondiente al mes de Enero, por actividades del 
                  <b> PROYECTO NUTRICIÓN VNZ/PCA202010/PD2022190 </b>
