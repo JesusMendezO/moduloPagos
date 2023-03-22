@@ -29,11 +29,12 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
-  borderRadius: 2,
+  border: '1px solid #000',
+  borderRadius: 4,
   boxShadow: 24,
   p: 4,
 };
+
 // *************************************** PERIODOS DE PAGO *********************************************
 
 var year = new Date().getFullYear().toString()
@@ -103,19 +104,19 @@ let  l ;
 
       return(
    
-      <Card sx={{ minWidth: 275, mb: 2, mt: 2, }} variant="outlined">
+      <Card sx={{ minWidth: 275, mb: 2, mt: 3, border: 1, borderRadius: 4}} variant="outlined">
       <CardContent>
         <Typography sx={{ fontSize: 25, color: "black", mt: 1}} gutterBottom>
-                  {person.nombre}
+		      {person.nombre}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  {person.cedula}
+		      {person.cedula}
         </Typography>
       </CardContent>
       <CardActions  sx={{ bgcolor: "lightgray" }}>
         <Grid container justifyContent="flex-end" >
           <Grid item>
-            <Button size="small" sx={{ color:"blue" }} onClick={handleOpenModal}> VER MÁS </Button>
+            <Button size="small" sx={{ color:"blue" }} onClick={handleOpenModal}> VER MÁS <KeyboardArrowRightIcon /> </Button>
           </Grid>
         </Grid>
          <Modal
@@ -243,9 +244,6 @@ let  l ;
           onChange={handleChange}
         /> {x.label}
       </label>)}
- 
-     
-   
               </FormGroup>
              </Grid>
              </Grid>
@@ -269,10 +267,10 @@ let  l ;
              </Divider>
              <Grid container sx={{ mt: 2,}} spacing={1} justifyContent="flex-end" >
              <Grid item>
-               <Button variant='contained' color='error' onClick={handleCloseModal}> Cancelar </Button>
+               <Button variant='contained' color='error' sx={{ borderRadius:4 }} onClick={handleCloseModal}> Cancelar </Button>
              </Grid>
              <Grid item>
-               <Button variant='contained' sx={{ bgcolor:"teal" }} onClick={enviar} > Generar Recibo </Button>
+               <Button variant='contained' sx={{ bgcolor:"teal", borderRadius:4 }} onClick={enviar} > Generar Recibo </Button>
              </Grid>
              </Grid>
           </Box>
