@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -10,6 +11,21 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const NavBar = () => {
+  
+  const nav = useNavigate();
+
+  const handleLinkClick = (event, message) => {
+    if (message === 'login') {
+      localStorage.removeItem("token");
+
+      nav("/login")
+            
+    }
+    console.log('Link clickeado');
+    console.log(event.currentTarget);
+    console.log(message);
+  };
+
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -55,7 +71,7 @@ const NavBar = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleCloseMenu}
               >
-                <MenuItem onClick={handleCloseMenu}> Cerrar Sesión </MenuItem>
+                <MenuItem onClick={event => handleLinkClick(event, 'login')}> Cerrar Sesión </MenuItem>
               </Menu>
             </div>
           )}
