@@ -162,8 +162,8 @@ const Invoice = () => {
           <Box sx={{ mt: 4, ml: 2, mr:2 }}>
             <Typography align='justify' sx={{ fontSize: 14 }}>
                  Se ha pagado la cantidad de novecientos dólares {items[(items.length-1)].total}, por el concepto de Incentivo a 
-                 Nombre Voluntario a la cuenta personal Nombre del Banco de Nombre del Titular de 
-                 la Cuenta correspondiente al mes de Enero, por actividades del 
+                 {items[(items.length-1)].nombre} a la cuenta personal Nombre del Banco de {items[(items.length-1)].total} correspondiente 
+                 al mes de Enero, por actividades del 
                  <b> PROYECTO NUTRICIÓN VNZ/PCA202010/PD2022190 </b>
             </Typography>
           </Box>
@@ -174,12 +174,12 @@ const Invoice = () => {
           </Box>
             <Box sx={{ mt: 8 }} >
             <Typography sx={{ fontSize: 14 }}>
-              Nombre Voluntario
+              {items[(items.length-1)].nombre}
             </Typography>
             </Box>
             <Box>
             <Typography sx={{ fontSize: 14 }}>
-              C.I 25.186.153
+              C.I. {items[(items.length-1)].cedula}
             </Typography>
           </Box>
           <Box sx={{ mt: 5, ml: 2 }} alignSelf='flex-start'>
