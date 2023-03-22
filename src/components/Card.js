@@ -95,8 +95,11 @@ let  l ;
         sum = Number(person.incntivo)+sum
 	      
         mes = Number(lang[i].slice(3, 4))-1;
-	 
-         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo,fechaEj:date , total: sum, mes: mes}];
+	 const month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const d = new Date(new Date(new Date().setMonth(mes)));
+let monthName = month[d.getMonth()];
+
+         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo,fechaEj:date , total: sum, mes: monthName }];
        
       vacio = vacio.concat(l)
     }
