@@ -83,7 +83,7 @@ function Search({ details }) {
             <Grid item xs={12} sm={12}>
               <FormControl variant="outlined">
                 <InputLabel htmlFor="buscar-input"> Buscar Voluntario </InputLabel>
-                <OutlinedInput sx={{ width: 500}}
+                <OutlinedInput sx={{ width: 500, borderRadius: '25px'}}
                   id="buscar-input"
                   type="search"
                   fullWidth
@@ -103,8 +103,6 @@ function Search({ details }) {
         {searchList()}
       </Container>
     </Box>
-    
-
   );
 }
 
