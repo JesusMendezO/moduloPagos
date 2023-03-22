@@ -164,7 +164,7 @@ const Invoice = () => {
                  Se ha pagado la cantidad de novecientos dólares {items[(items.length-1)].total}, por el concepto de Incentivo a 
                  {items[(items.length-1)].nombre} a la cuenta personal Nombre del Banco de {items[(items.length-1)].total} correspondiente 
                  al mes de Enero, por actividades del 
-                 <b> PROYECTO NUTRICIÓN VNZ/PCA202010/PD2022190 </b>
+                 <b>  {items[(items.length-1)].proyecto}  </b>
             </Typography>
           </Box>
           <Box sx={{ mt: 5, ml: 2 }} alignSelf='flex-start' >
