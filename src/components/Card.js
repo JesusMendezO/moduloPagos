@@ -99,7 +99,7 @@ let  l ;
 const d = new Date(new Date(new Date().setMonth(mes)));
 let monthName = month[d.getMonth()];
 
-         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.recibo , monto: person.incentivo,fechaEj:date , total: sum, mes: monthName, banco:person.banco, proyecto:person.proyecto, cargo:person.cargo,cedula:person.cedula }];
+         l = [{ value: lang[i], nombre: person.nombre ,titular:person.titular, numeroRecibo: person.recibo , monto: person.incentivo,fechaEj:date , total: sum, mes: monthName, banco:person.banco, proyecto:person.proyecto, cargo:person.cargo,cedula:person.cedula }];
        
       vacio = vacio.concat(l)
     }
