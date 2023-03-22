@@ -89,11 +89,13 @@ const [inf,setInf]=useState([]);
 let vacio =[];
 let  l ;
   let sum =0;
+	let mes;
     const enviar = e => {
       for (let i = 0; i < lang.length ; i++) {
         sum = Number(person.incntivo)+sum
-        console.log(lang)
-         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo,fechaEj:date , total: sum}];
+	      
+        mes = lang[i].slice(2, 5)
+         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo,fechaEj:date , total: sum, mes: mes}];
        
       vacio = vacio.concat(l)
     }
