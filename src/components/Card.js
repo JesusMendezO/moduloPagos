@@ -69,7 +69,7 @@ const list1 = [
 ];
 function CardComp({person}) {
   const nav = useNavigate();
-
+  const [date, setDate] = useState(Date);
     const [open, setOpen] = React.useState(false);
     const handleOpenModal = () => setOpen(true);
     const handleCloseModal = () => setOpen(false);
@@ -92,7 +92,7 @@ let  l ;
       for (let i = 0; i < lang.length ; i++) {
         sum = Number(person.incntivo)+sum
         console.log(lang)
-         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo , total: sum}];
+         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo,fechaEj:date , total: sum}];
        
       vacio = vacio.concat(l)
     }
@@ -258,8 +258,8 @@ let  l ;
                 <DatePicker 
                 label="Seleccione una fecha"
                 onChange={(date) => {
-                  const d = new Date(date).toLocaleDateString('es-ES');
-                  console.log(d);
+                  setDate(new Date(date).toLocaleDateString('es-ES'));
+             ;
                 }}
                 />
              </LocalizationProvider>
