@@ -57,7 +57,7 @@ const Invoice = () => {
   };
   
   
-  console.log(items.total)
+  console.log(items[0].total)
   const print = () => window.print();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
