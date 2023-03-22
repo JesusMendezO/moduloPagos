@@ -154,7 +154,7 @@ const Invoice = () => {
           </Box>
           <Box sx={{ mt: 4, ml: 2, mr:2 }}>
             <Typography align='justify' sx={{ fontSize: 14 }}>
-                 Se ha pagado la ${items[(items.length-1)].total}, por el concepto de Incentivo 
+                 Se ha pagado la cantidad de ${items[(items.length-1)].total}, por el concepto de Incentivo 
                  a {items[(items.length-1)].nombre} a la cuenta personal Nombre del Banco de {items[(items.length-1)].titular} correspondiente 
                  al mes de {items[(items.length-1)].mes}, por actividades del 
                  <b> {items[(items.length-1)].proyecto} </b>
