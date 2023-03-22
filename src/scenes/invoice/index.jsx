@@ -13,8 +13,6 @@ import logo from 'assets/paluz-logo.png';
 import line from 'assets/line-recibo.png'
 import { Button, Divider } from '@mui/material';
 
-
-
 const style = {
   position: 'absolute',
   top: '50%',
@@ -55,7 +53,6 @@ const Invoice = () => {
     console.log(event.currentTarget);
     console.log(message);
   };
-  
   
   console.log(items[0].total)
   const print = () => window.print();
@@ -136,8 +133,6 @@ const Invoice = () => {
            </Typography>
           </Box>
           <Box  sx={{ mt: 2 }}> 
-
-          
              <table class="center">
                 <tr>
                  <th align="center"> Periodo de Incentivo </th>
@@ -145,7 +140,6 @@ const Invoice = () => {
                  <th align="center"> Número de recibo  </th>
                  <th align="center"> Monto </th>
                </tr>
-               
                {items.map((x, i) => 
       <tr>
       <td align="center">{x.value}</td>
@@ -153,8 +147,7 @@ const Invoice = () => {
       <td align="center">{x.numeroRecibo} </td>
       <td align="center">{x.monto}</td>
     </tr>
-      
-      
+     
       )}
                
         </table>
