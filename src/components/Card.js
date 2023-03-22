@@ -116,7 +116,7 @@ let monthName = month[d.getMonth()];
 		      {person.nombre}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-		      {person.cedula}
+		      {person.cargo}
         </Typography>
       </CardContent>
       <CardActions  sx={{ bgcolor: "lightgray" }}>
@@ -136,7 +136,7 @@ let monthName = month[d.getMonth()];
                {person.nombre}
              </Typography>
              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-               {person.cedula}  
+               {person.cargo}  
              </Typography>
              <Divider sx={{ mt:2 }}>
                 <Chip label="PERÍODO DE INCENTIVO" />
