@@ -101,7 +101,7 @@ const Invoice = () => {
         </Box>
       </Modal>
       </Box>
-      <Container className='print' component="main" sx={{ mt: 3,  border: 4, borderRadius: 2 }} maxWidth="sm">
+      <Container className='print' component="main" sx={{ mt: 3,  border: 1, borderRadius: 2 }} maxWidth="sm">
       <Box
           sx={{
             marginTop: 2,
