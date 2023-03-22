@@ -18,7 +18,7 @@ const NavBar = () => {
     if (message === 'login') {
       localStorage.removeItem("token");
 
-      nav("/login")
+      nav("/")
             
     }
     console.log('Link clickeado');
