@@ -92,14 +92,14 @@ let  l ;
 	let mes;
     const enviar = e => {
       for (let i = 0; i < lang.length ; i++) {
-        sum = Number(person.incntivo)+sum
+        sum = Number(person.incentivo)+sum
 	      
         mes = Number(lang[i].slice(3, 4))-1;
 	 const month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 const d = new Date(new Date(new Date().setMonth(mes)));
 let monthName = month[d.getMonth()];
 
-         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.recibo , monto: person.incentivo,fechaEj:date , total: sum, mes: monthName, banco:person.banco, proyecto:person.proyecto, cargo:person.cargo }];
+         l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.recibo , monto: person.incentivo,fechaEj:date , total: sum, mes: monthName, banco:person.banco, proyecto:person.proyecto, cargo:person.cargo,cedula:person.cedula }];
        
       vacio = vacio.concat(l)
     }
