@@ -38,15 +38,15 @@ const style = {
 // *************************************** PERIODOS DE PAGO *********************************************
 
 var year = new Date().getFullYear().toString()
-var enero = new Date(new Date(new Date().setMonth(1)).setDate(0)).getDate()+ '/01/' + year ;
-var febrero = new Date(new Date(new Date().setMonth(2)).setDate(0)).getDate()+ '/02/' + year ;
-var marzo = new Date(new Date(new Date().setMonth(3)).setDate(0)).getDate()+ '/03/' + year ;
-var abril = new Date(new Date(new Date().setMonth(4)).setDate(0)).getDate()+ '/04/' + year ;
-var mayo = new Date(new Date(new Date().setMonth(5)).setDate(0)).getDate()+ '/05' + year ;
-var junio = new Date(new Date(new Date().setMonth(6)).setDate(0)).getDate()+ '/06/' + year ;
-var julio = new Date(new Date(new Date().setMonth(7)).setDate(0)).getDate()+ '/07/' + year ;
-var agosto = new Date(new Date(new Date().setMonth(8)).setDate(0)).getDate()+ '/08/' + year ;
-var septiembre = new Date(new Date(new Date().setMonth(9)).setDate(0)).getDate()+ '/09/' + year ;
+var enero = new Date(new Date(new Date().setMonth(1)).setDate(0)).getDate()+ '/1/' + year ;
+var febrero = new Date(new Date(new Date().setMonth(2)).setDate(0)).getDate()+ '/2/' + year ;
+var marzo = new Date(new Date(new Date().setMonth(3)).setDate(0)).getDate()+ '/3/' + year ;
+var abril = new Date(new Date(new Date().setMonth(4)).setDate(0)).getDate()+ '/4/' + year ;
+var mayo = new Date(new Date(new Date().setMonth(5)).setDate(0)).getDate()+ '/5' + year ;
+var junio = new Date(new Date(new Date().setMonth(6)).setDate(0)).getDate()+ '/6/' + year ;
+var julio = new Date(new Date(new Date().setMonth(7)).setDate(0)).getDate()+ '/7/' + year ;
+var agosto = new Date(new Date(new Date().setMonth(8)).setDate(0)).getDate()+ '/8/' + year ;
+var septiembre = new Date(new Date(new Date().setMonth(9)).setDate(0)).getDate()+ '/9/' + year ;
 var octubre = new Date(new Date(new Date().setMonth(10)).setDate(0)).getDate()+ '/10/' + year ;
 var noviembre = new Date(new Date(new Date().setMonth(11)).setDate(0)).getDate()+ '/11/' + year ;
 var diciembre = new Date(new Date(new Date().setMonth(12)).setDate(0)).getDate()+ '/12/' + year ;
