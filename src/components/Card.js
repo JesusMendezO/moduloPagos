@@ -1,5 +1,9 @@
-import React, { useState,createContext  } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import '../../node_modules/dayjs/locale/es';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -7,16 +11,17 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { Grid } from '@mui/material';
+import Divider from '@mui/material/Divider';
 import { Language } from '@mui/icons-material';
 import ReactDOM from "react-dom/client";
+import Chip from '@mui/material/Chip';
+import FormGroup from '@mui/material/FormGroup';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { Grid } from '@mui/material';
 //import Invoice from "scenes/invoice"
-const UserContext = createContext()
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -244,6 +249,22 @@ let  l ;
               </FormGroup>
              </Grid>
              </Grid>
+             <Divider sx={{ mt:2 }}>
+                <Chip label="FECHA DE EJECUCIÓN" />
+             </Divider>
+             <Box container sx={{ mt: 3 }} alignContent='center'>
+              <Box item xs={12} sx={{ ml: 5 }}>
+              <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="es">
+                <DatePicker 
+                label="Seleccione una fecha"
+                onChange={(date) => {
+                  const d = new Date(date).toLocaleDateString('es-ES');
+                  console.log(d);
+                }}
+                />
+             </LocalizationProvider>
+              </Box>
+             </Box>
              <Divider sx={{ mt:2 }}>
              </Divider>
              <Grid container sx={{ mt: 2,}} spacing={1} justifyContent="flex-end" >
