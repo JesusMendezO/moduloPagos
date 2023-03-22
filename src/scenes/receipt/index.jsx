@@ -40,7 +40,7 @@ const [datos, setDatos] = useState([])
    
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Navbar>
+      <Navbar />
       <Box>
         <Search details={datos}/>
       </Box>
