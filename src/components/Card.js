@@ -94,7 +94,7 @@ let  l ;
       for (let i = 0; i < lang.length ; i++) {
         sum = Number(person.incntivo)+sum
 	      
-        mes = Number(lang[i].slice(3, 6))
+        mes = lang[i].slice(3, 6)
 	 
          l = [{ value: lang[i], nombre: person.nombre , numeroRecibo: person.cedula , monto: person.incntivo,fechaEj:date , total: sum, mes: mes}];
        
