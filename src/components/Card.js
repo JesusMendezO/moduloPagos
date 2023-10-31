@@ -38,7 +38,7 @@ const style = {
 // *************************************** PERIODOS DE PAGO *********************************************
 
 var year = new Date().getFullYear().toString()
-var enero = new Date(new Date(new Date().setMonth(1)).setDate(0)).getDate()+ '/1/' + year ;
+var enero = new Date(new Date(new Date().setMonth(1)).setDate(-1)).getDate()+ '/1/' + year ;
 var febrero = new Date(new Date(new Date().setMonth(2)).setDate(0)).getDate()+ '/2/' + year ;
 var marzo = new Date(new Date(new Date().setMonth(3)).setDate(-1)).getDate()+ '/3/' + year ;
 var abril = new Date(new Date(new Date().setMonth(4)).setDate(0)).getDate()+ '/4/' + year ;
