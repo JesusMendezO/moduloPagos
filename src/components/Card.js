@@ -47,7 +47,7 @@ var junio = new Date(new Date(new Date().setMonth(6)).setDate(0)).getDate()+ '/6
 var julio = new Date(new Date(new Date().setMonth(7)).setDate(-1)).getDate()+ '/7/' + year ;
 var agosto = new Date(new Date(new Date().setMonth(8)).setDate(0)).getDate()+ '/8/' + year ;
 var septiembre = new Date(new Date(new Date().setMonth(9)).setDate(0)).getDate()+ '/9/' + year ;
-var octubre = new Date(new Date(new Date().setMonth(10)).setDate(-1)).getDate()+ '/10/' + year;
+var octubre = new Date(new Date(new Date().setMonth(10)).setDate(0)).getDate()+ '/10/' + year;
 var noviembre = new Date(new Date(new Date().setMonth(11)).setDate(0)).getDate()+ '/11/' + year;
 var diciembre = new Date(new Date(new Date().setMonth(12)).setDate(-1)).getDate()+ '/12/' + year;
 
