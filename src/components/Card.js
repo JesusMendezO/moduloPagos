@@ -75,7 +75,7 @@ function CardComp({person}) {
     const handleOpenModal = () => setOpen(true);
     const handleCloseModal = () => setOpen(false);
     const [lang, setLang] = useState([]);
-const [inf,setInf]=useState([]);
+    const [inf,setInf]=useState([]);
     const handleChange = e => {
       const { value, checked } = e.target;
       if (checked) {
@@ -87,20 +87,18 @@ const [inf,setInf]=useState([]);
       }
     }
 let vacio =[];
-let  l ;
-	
-
-  let sum =0;
-	let monthName  = "";
-	let mes;
+let  l ;	
+let sum = 0;
+let monthName  = "";
+let mes;
     const enviar = e => {
       for (let i = 0; i < lang.length ; i++) {
         sum = Number(person.incentivo)+sum
 	      
-         mes = Number(lang[i].slice(3, 4)-2);
+         mes = Number(lang[i].slice(3, 4)-1);
 	 const month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
          const d = new Date(new Date(new Date().setMonth(mes)));
-         monthName =  monthName +", "+ month[d.getMonth()]  ;
+         monthName =  monthName +", "+ month[d.getMonth(0)]  ;
 
          l = [{ value: lang[i], nombre: person.nombre ,titular:person.titular, numeroRecibo: person.recibo , monto: person.incentivo,fechaEj:date , total: sum, mes: monthName, banco:person.banco, proyecto:person.proyecto, cargo:person.cargo,cedula:person.cedula }];
        
