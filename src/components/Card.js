@@ -95,7 +95,7 @@ let mes;
       for (let i = 0; i < lang.length ; i++) {
         sum = Number(person.incentivo)+sum
 	      
-         mes = Number(lang[i].slice(2, 3)-1);
+         mes = Number(lang[i].slice(2, 3));
 	 const month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
          const d = new Date(new Date(new Date().setMonth(mes)));
          monthName =  monthName +", "+ month[d.getMonth()]  ;
