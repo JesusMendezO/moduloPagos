@@ -38,7 +38,7 @@ const style = {
 // *************************************** PERIODOS DE PAGO *********************************************
 
 var year = new Date().getFullYear().toString()
-var enero = new Date(new Date(new Date().setMonth(1)).setDate(-1)).getDate()+ '/1/' + year ;
+var enero = new Date(new Date(new Date().setMonth(1)).setDate(0)).getDate()+ '/1/' + year ;
 var febrero = new Date(new Date(new Date().setMonth(2)).setDate(0)).getDate()+ '/2/' + year ;
 var marzo = new Date(new Date(new Date().setMonth(3)).setDate(-1)).getDate()+ '/3/' + year ;
 var abril = new Date(new Date(new Date().setMonth(4)).setDate(0)).getDate()+ '/4/' + year ;
@@ -98,7 +98,7 @@ let mes;
          mes = Number(lang[i].slice(3, 4)-1);
 	 const month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
          const d = new Date(new Date(new Date().setMonth(mes)));
-         monthName =  monthName +", "+ month[d.getMonth(0)]  ;
+         monthName =  monthName +", "+ month[d.getMonth()]  ;
 
          l = [{ value: lang[i], nombre: person.nombre ,titular:person.titular, numeroRecibo: person.recibo , monto: person.incentivo,fechaEj:date , total: sum, mes: monthName, banco:person.banco, proyecto:person.proyecto, cargo:person.cargo,cedula:person.cedula }];
        
