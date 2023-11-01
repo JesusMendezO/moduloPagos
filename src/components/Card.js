@@ -101,7 +101,7 @@ let mes;
 	 //const d = new Date(new Date().setMonth(mes));
          monthName =  monthName +", "+ month[d.getMonth()] ;
 	 const prueba = new Date().setMonth(11);
-	 console.log("Aqui" + " " +  prueba);
+	 console.log("Aqui" + " " +  prueba.toString();
 
          l = [{ value: lang[i], nombre: person.nombre ,titular:person.titular, numeroRecibo: person.recibo , monto: person.incentivo,fechaEj:date , total: sum, mes: monthName, banco:person.banco, proyecto:person.proyecto, cargo:person.cargo,cedula:person.cedula }];
        
