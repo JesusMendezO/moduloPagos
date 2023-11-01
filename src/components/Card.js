@@ -95,7 +95,7 @@ let mes;
       for (let i = 0; i < lang.length ; i++) {
         sum = Number(person.incentivo)+sum
 	      
-         mes = Number(lang[i].slice(3, 4)-1);
+         mes = Number(lang[i].slice(3, 5)-1);
 	      console.log(lang[i])
 	      console.log(lang[i].slice(3, 5))
 	      console.log(mes)
