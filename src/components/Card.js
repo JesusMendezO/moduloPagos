@@ -99,7 +99,8 @@ let mes;
 	 const month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
          //const d = new Date(new Date(new Date().setMonth(mes)));
 	 const d = new Date(new Date().setMonth(mes));
-         monthName =  monthName +", "+ month[d]  ;
+         monthName =  monthName +", "+ month[d.getMonth()] ;
+	 console.log(d);
 
          l = [{ value: lang[i], nombre: person.nombre ,titular:person.titular, numeroRecibo: person.recibo , monto: person.incentivo,fechaEj:date , total: sum, mes: monthName, banco:person.banco, proyecto:person.proyecto, cargo:person.cargo,cedula:person.cedula }];
        
