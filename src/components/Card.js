@@ -97,7 +97,7 @@ let mes;
 	      
          mes = Number(lang[i].slice(3, 4)-1);
 	      console.log(lang[i])
-	      console.log(lang[i].slice(3, 4))
+	      console.log(lang[i].slice(3, 5))
 	      console.log(mes)
 	 const month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
          const d = new Date(new Date(new Date().setMonth(mes)));
