@@ -183,7 +183,7 @@ var mes=items[(items.length-1)].mes.slice(1)
              <Grid item xs={6}>
              <Box>
             <Typography align='center' sx={{ fontSize: 14,}}> 
-              Maria Lourdes Reyes
+              Scarlet Morán
             </Typography>
             <Typography align='center' sx={{ fontSize: 14 }}>
               Coordinador de Gestión Humana
