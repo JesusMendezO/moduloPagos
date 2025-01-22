@@ -36,8 +36,11 @@ const style = {
 };
 
 // *************************************** PERIODOS DE PAGO *********************************************
+var fechaActual = new Date();
+var anioActual = fechaActual.getFullYear();
+var anioAnterior = anioActual - 1;
 
-var year = new Date().getFullYear().toString()
+var year =  anioAnterior.toString()
 var enero = new Date(new Date(new Date().setMonth(1)).setDate(-1)).getDate()+ '/01/' + year ;
 var febrero = new Date(new Date(new Date().setMonth(2)).setDate(0)).getDate()+ '/02/' + year ;
 var marzo = new Date(new Date(new Date().setMonth(3)).setDate(-1)).getDate()+ '/03/' + year ;
