@@ -39,37 +39,37 @@ const style = {
 var fechaActual = new Date();
 var anioActual = fechaActual.getFullYear();
 var anioAnterior = anioActual - 1;
-
+var yearActual = anioActual.toString()
 var year =  anioAnterior.toString()
-var enero = new Date(new Date(new Date().setMonth(1)).setDate(-1)).getDate()+ '/01/' + year ;
-var febrero = new Date(new Date(new Date().setMonth(2)).setDate(0)).getDate()+ '/02/' + year ;
-var marzo = new Date(new Date(new Date().setMonth(3)).setDate(-1)).getDate()+ '/03/' + year ;
-var abril = new Date(new Date(new Date().setMonth(4)).setDate(0)).getDate()+ '/04/' + year ;
-var mayo = new Date(new Date(new Date().setMonth(5)).setDate(-1)).getDate()+ '/05/' + year ;
-var junio = new Date(new Date(new Date().setMonth(6)).setDate(0)).getDate()+ '/06/' + year ;
-var julio = new Date(new Date(new Date().setMonth(7)).setDate(-1)).getDate()+ '/07/' + year ;
-var agosto = new Date(new Date(new Date().setMonth(8)).setDate(-1)).getDate()+ '/08/' + year ;
-var septiembre = new Date(new Date(new Date().setMonth(9)).setDate(0)).getDate()+ '/09/' + year ;
-var octubre = new Date(new Date(new Date().setMonth(10)).setDate(-1)).getDate()+ '/10/' + year;
-var noviembre = new Date(new Date(new Date().setMonth(11)).setDate(0)).getDate()+ '/11/' + year;
+var enero = new Date(new Date(new Date().setMonth(1)).setDate(-1)).getDate()+ '/01/' + yearActual ;
+var febrero = new Date(new Date(new Date().setMonth(2)).setDate(0)).getDate()+ '/02/' + yearActual ;
+var marzo = new Date(new Date(new Date().setMonth(3)).setDate(-1)).getDate()+ '/03/' + yearActual ;
+var abril = new Date(new Date(new Date().setMonth(4)).setDate(0)).getDate()+ '/04/' + yearActual ;
+var mayo = new Date(new Date(new Date().setMonth(5)).setDate(-1)).getDate()+ '/05/' + yearActual ;
+var junio = new Date(new Date(new Date().setMonth(6)).setDate(0)).getDate()+ '/06/' + yearActual;
+var julio = new Date(new Date(new Date().setMonth(7)).setDate(-1)).getDate()+ '/07/' + yearActual ;
+var agosto = new Date(new Date(new Date().setMonth(8)).setDate(-1)).getDate()+ '/08/' + yearActual ;
+var septiembre = new Date(new Date(new Date().setMonth(9)).setDate(0)).getDate()+ '/09/' + yearActual ;
+var octubre = new Date(new Date(new Date().setMonth(10)).setDate(-1)).getDate()+ '/10/' + yearActual;
+var noviembre = new Date(new Date(new Date().setMonth(11)).setDate(0)).getDate()+ '/11/' + yearActual;
 var diciembre = new Date(new Date(new Date().setMonth(0)).setDate(-1)).getDate()+ '/12/' + year;
 
 // *********************************************************************************************************
 const list = [
-  { value: enero.toString(), label: 'Enero ' + year  },
-  { value: febrero.toString(), label: 'Febrero ' + year },
-  { value: marzo.toString(), label: 'Marzo ' + year  },
-  { value: abril.toString(), label: 'Abril ' + year  },
-  { value: mayo.toString(), label: 'Mayo ' + year   },
-  { value: junio.toString(), label: 'Junio ' + year }
+  { value: enero.toString(), label: 'Enero ' + yearActual  },
+  { value: febrero.toString(), label: 'Febrero ' + yearActual },
+  { value: marzo.toString(), label: 'Marzo ' + yearActual  },
+  { value: abril.toString(), label: 'Abril ' + yearActual  },
+  { value: mayo.toString(), label: 'Mayo ' + yearActual  },
+  { value: junio.toString(), label: 'Junio ' + yearActual }
 ];
 const list1 = [
-  { value: julio.toString(), label: 'Julio ' + year  },
-  { value: agosto.toString(), label: 'Agosto ' + year },
-  { value: septiembre.toString(), label: 'Septiembre ' + year  },
-  { value: octubre.toString(), label: 'Octubre ' + year  },
-  { value: noviembre.toString(), label: 'Noviembre ' + year   },
-  { value: diciembre.toString(), label: 'Dicimbre ' + year }
+  { value: julio.toString(), label: 'Julio ' + yearActual  },
+  { value: agosto.toString(), label: 'Agosto ' + yearActual },
+  { value: septiembre.toString(), label: 'Septiembre ' + yearActual },
+  { value: octubre.toString(), label: 'Octubre ' + yearActual },
+  { value: noviembre.toString(), label: 'Noviembre ' + yearActual  },
+  { value: diciembre.toString(), label: 'Dicimbre ' + yearActual }
 ];
 function CardComp({person}) {
   const nav = useNavigate();
