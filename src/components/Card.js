@@ -69,7 +69,7 @@ const list1 = [
   { value: septiembre.toString(), label: 'Septiembre ' + yearActual },
   { value: octubre.toString(), label: 'Octubre ' + yearActual },
   { value: noviembre.toString(), label: 'Noviembre ' + yearActual  },
-  { value: diciembre.toString(), label: 'Dicimbre ' + yearActual }
+  { value: diciembre.toString(), label: 'Dicimbre ' + year }
 ];
 function CardComp({person}) {
   const nav = useNavigate();
